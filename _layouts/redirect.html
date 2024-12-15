@@ -24,6 +24,58 @@
   {% endif %}
   <meta property="og:site_name" content="SITCON">
   <meta property="og:locale" content="zh_TW">
+    <style>
+      body {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          margin: 0;
+          font-family: Arial, sans-serif;
+          background-color: #f0f0f0;
+          color: #333;
+          text-align: center;
+      }
+      .container {
+          background: white;
+          padding: 20px;
+          border-radius: 8px;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+          animation: fadeIn 0.5s ease-in-out;
+      }
+      h1 {
+          font-size: 24px;
+          margin-bottom: 10px;
+          animation: fadeIn 0.5s ease-in-out;
+      }
+      p {
+          font-size: 18px;
+          margin: 0;
+          animation: fadeIn 0.5s ease-in-out;
+      }
+      .countdown {
+          font-weight: bold;
+          color: #007bff;
+      }
+
+      @keyframes fadeIn {
+          from {
+              opacity: 0;
+          }
+          to {
+              opacity: 1;
+          }
+      }
+
+      @keyframes fadeOut {
+          from {
+              opacity: 1;
+          }
+          to {
+              opacity: 0;
+          }
+      }
+  </style>
   <script>
     setTimeout(function() {
       window.location.href = "{{ page.redirect_to }}";
@@ -35,7 +87,9 @@
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KB9RZD8J"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-
-  <p>重新導向到 <a href="{{ page.redirect_to }}">{{ page.redirect_to }}</a>⋯⋯</p>
+  <div class="container">
+    <h1>Redirecting...</h1>
+    <p>You will be redirected to <a href="{{ page.redirect_to }}">{{ page.redirect_to }}</a> shortly.</p>
+  </div>
 </body>
 </html>
